@@ -27,4 +27,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
-$('#create-account-btn').on('click', signupFormHandler);
+
+document
+  .getElementById('create-account-btn')
+  .addEventListener('click', signupFormHandler);

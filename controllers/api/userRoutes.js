@@ -14,8 +14,15 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/project/:id', async (req, res) => {
-
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: [{model: Post}, {model: Comment}]
+    })
+    res.json(userData)
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // // Use withAuth middleware to prevent access to route
@@ -26,6 +33,9 @@ router.get('/profile', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
+
+    console.log("user data", userData)
+    console.log("user data id", userData.id)
 
     req.session.save(() => {
       req.session.user_id = userData.id;

@@ -22,10 +22,18 @@ router.get('/project/:id', async (req, res) => {
 
 });
 
-// // Use withAuth middleware to prevent access to route
-router.get('/profile', async (req, res) => {
+router.post('/', (req, res) => {
+  try {
+    const postData = await Post.create(req.body);
 
+    req.session.save(() => {
+      req.session.logged_in = true;
+
+    res.status(200).json(postData)
+  });
+ } catch (err) {
+    res.status(500).json(err);
+  }
 });
-
 
 module.exports = router;
