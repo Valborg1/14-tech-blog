@@ -3,10 +3,11 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
+
+  trim: (text) => {
+    return text.split(" ").splice(0, 10).join(" ");
   },
+  
   get_emoji: () => {
     const randomNum = Math.random();
 

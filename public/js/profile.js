@@ -3,9 +3,12 @@
 $('#submit-post').on('click', async function(e) {
     e.preventDefault();
 
-    var title = $('#blog-title').text().trim()
-    var content = $('#blog-text').text().trim()
+    var title = $('#blog-title').val().trim();
+    var content = $('#blog-text').val().trim();
     var user_id = localStorage.getItem('user_id');
+
+    console.log("title", title)
+    console.log("content", content)
 
 
     await fetch('/api/post/', {
