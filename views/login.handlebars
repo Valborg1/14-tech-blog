@@ -1,28 +1,15 @@
+    <div class="card">
+      <h3 class="card-header">Login</h3>
+      <form id="login-form" class="card-body">
+        <label class="form-label" for="username-login">Username</label>
+        <input  id="username-login" type="text" autofocus="true" class="form-input" />
 
-<form class="form login-form">
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <div class="mb-3">
-        <label for="email-login" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="password-login" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password-login">
-      </div>
-  <div class="row">
-    <div class="col-md-6">
-      <button type="submit" class="btn btn-primary" style="width: 100%" id="login-btn">Login</button>
-    </div>
-    <div class="col-md-6">
-      <a class="btn btn-secondary" href="/signup" style="width: 100%">Sign Up</a>
-        <div id="help" class="form-text">Click here to create an account.</div>
-    </div>
-    </div>
-    </div>
-  </div>
-</form>
+        <label class="form-label" for="password-login">Password</label>
+        <input id="password-login" type="password" autofocus="true" class="form-input" />
 
-
-<script src="./js/login.js"></script>
+        <button type="submit" class="btn">Login!</button>
+        <a class="login-link" href="/signup">Sign up instead</a>
+      </form>
+    </div>
+    
+<script src="/javascript/login.js"></script>

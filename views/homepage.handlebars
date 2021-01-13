@@ -1,8 +1,9 @@
-<!-- Loop over each object in the projects array -->
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-testing
-    </h2>
-  </div>
-</div>
+<article class="post">
+
+    {{#each posts as |post| }}
+        {{> post-info post}}
+    {{/each}}
+
+</article>
+
+
